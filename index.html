@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sparrow Ai - Browser</title>
+    <title>Sparrow AI - Browser</title>
     <style>
         /* Ensuring full screen responsiveness */
         body, html {
@@ -11,18 +11,40 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden;
         }
         iframe {
             width: 100%;
             height: 100vh;
             border: none;
         }
+        input {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80%;
+        }
+        button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
     </style>
 </head>
 <body>
-    <iframe src="https://www.google.com/" id="browserFrame">
-        Your browser does not support iframes.
-    </iframe>
+    <input type="text" id="urlInput" placeholder="Enter a URL..." />
+    <button onclick="loadUrl()">Go</button>
+    <iframe id="browserFrame" src=""></iframe>
+
+    <script>
+        function loadUrl() {
+            var url = document.getElementById('urlInput').value;
+            // Add http:// if not included
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'http://' + url;
+            }
+            document.getElementById('browserFrame').src = url;
+        }
+    </script>
 </body>
 </html>
+
