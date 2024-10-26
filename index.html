@@ -17,31 +17,39 @@
             align-items: center;
             justify-content: center;
         }
-        img {
-            max-width: 200px; /* Adjust the size as needed */
-            margin-bottom: 20px; /* Space between the image and input */
+        h1 {
+            color: blue; /* Set the text color to blue */
+            margin-bottom: 20px; /* Space between the title and input */
         }
         input {
             width: 70%;
             padding: 10px;
             font-size: 16px;
             margin-bottom: 10px; /* Space between input and button */
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
         button {
             padding: 10px;
             font-size: 16px;
         }
+        /* Container to align button with input */
+        .input-container {
+            display: flex;
+            width: 70%;
+        }
         iframe {
             width: 100%;
-            height: calc(100vh - 130px); /* Adjust height to leave space for image and inputs */
+            height: calc(100vh - 130px); /* Adjust height to leave space for title and inputs */
             border: none;
         }
     </style>
 </head>
 <body>
-    <img src="browser.png" alt="Logo" id="centerImage" />
-    <input type="text" id="urlInput" placeholder="Enter a URL..." />
-    <button onclick="loadUrl()">Go</button>
+    <h1>Sparrow AI - Browser</h1>
+    <div class="input-container">
+        <input type="text" id="urlInput" placeholder="Enter a URL..." />
+        <button onclick="loadUrl()">Go</button>
+    </div>
     <iframe id="browserFrame" src=""></iframe>
 
     <script>
@@ -57,4 +65,5 @@
     </script>
 </body>
 </html>
+
 
