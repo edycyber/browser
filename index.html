@@ -21,21 +21,22 @@
             color: blue; /* Set the text color to blue */
             margin-bottom: 20px; /* Space between the title and input */
         }
-        input {
+        .input-container {
+            display: flex;
             width: 70%;
+        }
+        input {
+            flex: 1; /* Allow the input to take up remaining space */
             padding: 10px;
             font-size: 16px;
-            margin-bottom: 10px; /* Space between input and button */
+            margin-right: 5px; /* Space between input and button */
             box-sizing: border-box; /* Ensure padding is included in width */
         }
         button {
             padding: 10px;
             font-size: 16px;
-        }
-        /* Container to align button with input */
-        .input-container {
-            display: flex;
-            width: 70%;
+            width: 100px; /* Set a fixed width for uniformity */
+            box-sizing: border-box; /* Ensure padding is included in width */
         }
         iframe {
             width: 100%;
@@ -45,7 +46,7 @@
     </style>
 </head>
 <body>
-    <h1>Sparrow AI - Browser</h1>
+    <h1>Sparrow AI - Browser 🐦</h1>
     <div class="input-container">
         <input type="text" id="urlInput" placeholder="Enter a URL..." />
         <button onclick="loadUrl()">Go</button>
@@ -65,5 +66,3 @@
     </script>
 </body>
 </html>
-
-
