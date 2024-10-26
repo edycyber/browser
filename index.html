@@ -5,28 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sparrow AI - Browser</title>
     <style>
-        /* Ensuring full screen responsiveness */
+        /* Ensure full screen responsiveness */
         body, html {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-        }
-        iframe {
-            width: 100%;
-            height: 100vh;
-            border: none;
+            overflow: hidden;
         }
         input {
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 80%;
+            width: 70%;
+            padding: 10px;
+            font-size: 16px;
         }
         button {
             position: absolute;
             top: 10px;
             right: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100vh - 50px); /* Adjust height to leave space for input */
+            border: none;
         }
     </style>
 </head>
@@ -37,7 +42,7 @@
 
     <script>
         function loadUrl() {
-            var url = document.getElementById('urlInput').value;
+            var url = document.getElementById('urlInput').value.trim();
             // Add http:// if not included
             if (!url.startsWith('http://') && !url.startsWith('https://')) {
                 url = 'http://' + url;
@@ -47,4 +52,3 @@
     </script>
 </body>
 </html>
-
