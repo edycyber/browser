@@ -47,12 +47,14 @@
     <script>
         function loadUrl() {
             var url = document.getElementById('urlInput').value.trim();
-            // Add http:// if not included
+            // Check if the URL starts with 'http://' or 'https://'
             if (!url.startsWith('http://') && !url.startsWith('https://')) {
-                url = 'http://' + url;
+                // Automatically add 'https://' for URLs without it
+                url = 'https://' + url;
             }
             document.getElementById('browserFrame').src = url;
         }
     </script>
 </body>
 </html>
+
